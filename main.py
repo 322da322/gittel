@@ -3,9 +3,6 @@ import datetime
 from aiogram import Bot, Dispatcher, executor, types
 
 
-# курс доллара
-
-# Настойка бота
 # ----------------------------
 logging.basicConfig(level=logging.INFO)
 bot = Bot(token="6105269350:AAFdfI9vMQ77TUuv2sJXewfDg82SbPml5po")
@@ -14,12 +11,46 @@ dp = Dispatcher(bot)
 
 # ---------------------------------------------
 
+#КОНПКИ????
+button1 = types.KeyboardButton(text='ВЫБРАТЬ ПРЕДМЕТ?')
+keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True)
+keyboard.add(button1)
 
 
-# стартовая функция
+ALO = types.InlineKeyboardMarkup()
+ALO.add(types.InlineKeyboardButton(text="МАТЕМАТИКА??", callback_data="math"))
+
+
+
+ALO1 = types.InlineKeyboardMarkup()
+ALO1.add(types.InlineKeyboardButton(text="1", callback_data="1"))
+
+
+# стартовая функция????????
 @dp.message_handler(commands=['start'], commands_prefix='/')
 async def process_start_command(message: types.Message):
     await message.answer("qweqwewq")
+
+
+
+@dp.callback_query_handler(text="ВЫБРАТЬ ПРЕДМЕТ?")
+async def krasnodar(callback: types.CallbackQuery):
+    await callback.message.answer("К КАКОМУ ПРЕДМЕТУ????????????", reply_markup=ALO)
+
+
+@dp.callback_query_handler(text='math')
+async def yes(callback: types.CallbackQuery):
+    await callback.message.answer("ВЫБЕРИТЕ ТИП", reply_markup=ALO1)
+
+
+
+@dp.callback_query_handler(text='1')
+async def yes(callback: types.CallbackQuery):
+    await callback.message.answer("ura")
+
+
+
+
 
 
 
