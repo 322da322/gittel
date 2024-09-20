@@ -29,7 +29,7 @@ ALO1.add(types.InlineKeyboardButton(text="1", callback_data="1"))
 # стартовая функция????????
 @dp.message_handler(commands=['start'], commands_prefix='/')
 async def process_start_command(message: types.Message):
-    await message.answer("qweqwewq")
+    await message.answer("qweqwewq", reply_markup=keyboard)
 
 
 
