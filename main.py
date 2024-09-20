@@ -33,7 +33,7 @@ async def process_start_command(message: types.Message):
 
 
 
-@dp.message_handler(text=['Выбрать предмет'])
+@dp.message_handler(text=['ВЫБРАТЬ ПРЕДМЕТ?'])
 async def predmet(message: types.Message):
     await message.answer("К КАКОМУ ПРЕДМЕТУ????????????", reply_markup=ALO)
 
