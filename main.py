@@ -32,6 +32,7 @@ ALO1.add(types.InlineKeyboardButton(text="1", callback_data="1"))
 
 
 async def greet(message: types.Message):
+    print(1)
     answer1 = get_token.get_chat_completion(get_token.get_token1(get_token.auth), message.text).json()['choices'][0]['message']['content']
     print(f"Сообщение от {message.from_user.full_name}: {message.text}")
     print(f"Ответ: {answer1}")
@@ -48,6 +49,7 @@ async def process_start_command(message: types.Message):
 
 @dp.message_handler(text=['ВЫБРАТЬ ПРЕДМЕТ?'])
 async def predmet(message: types.Message):
+    print(1)
     await message.answer("К КАКОМУ ПРЕДМЕТУ????????????", reply_markup=ALO)
 
 
