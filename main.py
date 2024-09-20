@@ -1,6 +1,7 @@
 import logging
 import datetime
 from aiogram import Bot, Dispatcher, executor, types
+import get_token
 
 
 # ----------------------------
@@ -27,6 +28,18 @@ ALO1.add(types.InlineKeyboardButton(text="1", callback_data="1"))
 
 
 # стартовая функция????????
+
+
+
+async def greet(message: types.Message):
+    answer1 = get_token.get_chat_completion(get_token.get_token1(get_token.auth), message.text).json()['choices'][0]['message']['content']
+    print(f"Сообщение от {message.from_user.full_name}: {message.text}")
+    print(f"Ответ: {answer1}")
+    await message.answer(answer1)
+
+
+
+
 @dp.message_handler(commands=['start'], commands_prefix='/')
 async def process_start_command(message: types.Message):
     await message.answer("qweqwewq", reply_markup=keyboard)
