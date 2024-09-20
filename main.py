@@ -33,10 +33,9 @@ async def process_start_command(message: types.Message):
 
 
 
-@dp.callback_query_handler(text="ВЫБРАТЬ ПРЕДМЕТ?")
-async def krasnodar(callback: types.CallbackQuery):
-    print(1)
-    await callback.message.answer("К КАКОМУ ПРЕДМЕТУ????????????", reply_markup=ALO)
+@dp.message_handler(text=['Выбрать предмет'])
+async def predmet(message: types.Message):
+    await message.answer("К КАКОМУ ПРЕДМЕТУ????????????", reply_markup=ALO)
 
 
 @dp.callback_query_handler(text='math')
