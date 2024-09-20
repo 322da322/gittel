@@ -65,7 +65,7 @@ async def yes(callback: types.CallbackQuery):
 
 
 
-
+dp.register_message_handler(greet)
 
 
 
