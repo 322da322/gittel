@@ -31,12 +31,6 @@ ALO1.add(types.InlineKeyboardButton(text="1", callback_data="1"))
 
 
 
-async def greet(message: types.Message):
-    print(1)
-    answer1 = get_token.get_chat_completion(get_token.get_token1(get_token.auth), message.text).json()['choices'][0]['message']['content']
-    print(f"Сообщение от {message.from_user.full_name}: {message.text}")
-    print(f"Ответ: {answer1}")
-    await message.answer(answer1)
 
 
 
@@ -63,6 +57,12 @@ async def yes(callback: types.CallbackQuery):
 async def yes(callback: types.CallbackQuery):
     await callback.message.answer("ura")
 
+async def greet(message: types.Message):
+    print(1)
+    answer1 = get_token.get_chat_completion(get_token.get_token1(get_token.auth), message.text).json()['choices'][0]['message']['content']
+    print(f"Сообщение от {message.from_user.full_name}: {message.text}")
+    print(f"Ответ: {answer1}")
+    await message.answer(answer1)
 
 
 dp.register_message_handler(greet)
