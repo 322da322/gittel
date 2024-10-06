@@ -1,5 +1,4 @@
 import logging
-import datetime
 from aiogram import Bot, Dispatcher, executor, types
 import get_token
 
