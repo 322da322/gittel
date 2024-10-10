@@ -56,7 +56,7 @@ async def yes(callback: types.CallbackQuery):
 @dp.callback_query_handler(text='1')
 async def yes(callback: types.CallbackQuery):
     await callback.message.answer(parsing.qeustion[random.randint(1,50)])
-    flagQue = True
+
 
 async def greet(message: types.Message):
     
