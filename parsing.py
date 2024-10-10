@@ -10,3 +10,4 @@ answer = soup.find_all("span", style="letter-spacing: 2px;")
 for i in range(len(qeustion)):
     print(qeustion[i].text.replace("­", ""))
     print(answer[i].text)
+    
