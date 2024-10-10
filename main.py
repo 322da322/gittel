@@ -1,4 +1,4 @@
-import logging, random
+import logging, random, config
 import parsing
 from aiogram import Bot, Dispatcher, executor, types
 import get_token
@@ -6,7 +6,7 @@ import get_token
 
 # ----------------------------
 logging.basicConfig(level=logging.INFO)
-bot = Bot(token="6105269350:AAFdfI9vMQ77TUuv2sJXewfDg82SbPml5po")
+bot = Bot(token=config.token)
 
 dp = Dispatcher(bot)
 
