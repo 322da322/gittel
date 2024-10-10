@@ -44,7 +44,7 @@ async def process_start_command(message: types.Message):
 @dp.message_handler(text=['ВЫБРАТЬ ПРЕДМЕТ?'])
 async def predmet(message: types.Message):
     print(1)
-    await message.answer("К КАКОМУ ПРЕДМЕТУ????????????", reply_markup=ALO)
+    await message.answer("К КАКОМУ ПРЕДМЕТУ", reply_markup=ALO)
 
 
 @dp.callback_query_handler(text='math')
