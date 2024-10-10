@@ -19,7 +19,7 @@ keyboard.add(button1)
 
 
 ALO = types.InlineKeyboardMarkup()
-ALO.add(types.InlineKeyboardButton(text="МАТЕМАТИКА??", callback_data="math"))
+ALO.add(types.InlineKeyboardButton(text="МАТЕМАТИКА", callback_data="math"))
 
 
 
