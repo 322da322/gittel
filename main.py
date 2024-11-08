@@ -1,5 +1,5 @@
 import logging, random, config
-import parsing
+import parsing, asyncio
 from aiogram import Bot, Dispatcher, executor, types
 import get_token
 
@@ -53,9 +53,12 @@ async def yes(callback: types.CallbackQuery):
 
 
 
-@dp.callback_query_handler(text='1 ')
+@dp.callback_query_handler(text='1')
 async def yes(callback: types.CallbackQuery):
-    await callback.message.answer(parsing.qeustion[random.randint(1,50)])
+   # task1 = await asyncio.create_task(f())
+
+    await callback.message.answer(asyncio.run(parsing.one())[random.randint(0,18)])
+    
 
 
 async def greet(message: types.Message):
