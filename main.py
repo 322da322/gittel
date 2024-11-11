@@ -57,7 +57,7 @@ async def yes(callback: types.CallbackQuery):
 async def yes(callback: types.CallbackQuery):
     task1 = await asyncio.create_task(parsing.one())
 
-    await callback.message.answer(await task1[0][random.randint(0,18)])
+    await callback.message.answer(task1[0][random.randint(0,18)])
     
 
 
