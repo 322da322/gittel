@@ -57,12 +57,11 @@ async def yes(callback: types.CallbackQuery):
 async def yes(callback: types.CallbackQuery):
    # task1 = await asyncio.create_task(f())
 
-    await callback.message.answer(asyncio.run(parsing.one())[random.randint(0,18)])
+    await callback.message.answer(asyncio.run(parsing.one())[0][random.randint(0,18)])
     
 
 
 async def greet(message: types.Message):
-    
     answer1 = get_token.get_chat_completion(get_token.get_token1(get_token.auth), message.text).json()['choices'][0]['message']['content']
     print(f"Сообщение от {message.from_user.full_name}: {message.text}")
     print(f"Ответ: {answer1}")
