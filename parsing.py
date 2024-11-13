@@ -17,6 +17,7 @@ async def one():
     for i in range(len(qeustion)):
         qeustions.append(qeustion[i].text.replace("­", ""))
         answers.append(answer[i].text)
+        print(1)
         #solutins.append(solution.text.replace("­", ""))
     return qeustions,answers, solutins
 
