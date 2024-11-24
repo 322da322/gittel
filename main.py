@@ -27,7 +27,7 @@ ALO1 = types.InlineKeyboardMarkup()
 ALO1.add(types.InlineKeyboardButton(text="1", callback_data="1"))
 
 
-# стартовая функция
+# стартовая функция1
 
 
 
